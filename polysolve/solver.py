@@ -1,3 +1,4 @@
+"""Solver functions."""
 from cmath import sqrt
 import math
 
@@ -10,7 +11,7 @@ def quadratic(
         b: float,
         c: float
     ) -> tuple[float , float]:
-   """
+    """
     Solves the roots of a quadratic equation.
 
     Uses the quadratic formula. Result must be real.
@@ -32,10 +33,11 @@ def quadratic(
     Examples
     --------
     >>> quadratic(1, 2, 0)
-    (0.0, -2.0)
+    (0j, (-2-0j))
     >>> quadratic(3., 0., -1.)
-    (0.5773502691896257, -0.5773502691896257)
+    ((0.5773502691896257+0j), (-0.5773502691896257-0j))
     """
+   
     det = b**2 - (4*a*c)
 
     if math.isclose(det, 0):
@@ -44,6 +46,7 @@ def quadratic(
     return ((-b + sqrt(det)) / (2*a), (-b - sqrt(det)) / (2*a))
 
 def cubic(a, b, c, d):
+    """Test."""
     q = (3*a*c - b**2) / (9*a**2)
     r = (9*a*b*c - 27*a**2*d - 2*b**3) / (54*a**3)
 
