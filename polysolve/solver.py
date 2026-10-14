@@ -5,7 +5,37 @@ from cowsay import cow
 
 CBRT_UNITY_IM = sqrt(3)/2 * 1j
 
-def quadratic(a, b, c):
+def quadratic(
+        a: float,
+        b: float,
+        c: float
+    ) -> tuple[float , float]:
+   """
+    Solves the roots of a quadratic equation.
+
+    Uses the quadratic formula. Result must be real.
+
+    Parameters
+    ----------
+    a
+       :math:`x^2` coefficient.
+    b
+       :math:`x` coefficient.
+    c
+       Constant value.
+
+    Returns
+    -------
+    tuple[float, float]
+        Positive and negative roots of quadratic.
+
+    Examples
+    --------
+    >>> quadratic(1, 2, 0)
+    (0.0, -2.0)
+    >>> quadratic(3., 0., -1.)
+    (0.5773502691896257, -0.5773502691896257)
+    """
     det = b**2 - (4*a*c)
 
     if math.isclose(det, 0):
